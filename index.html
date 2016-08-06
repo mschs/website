@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>msc - handel& service</title>
+
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <link type="text/css" rel="stylesheet" href="css/styles.css"/>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+
+<body onhashchange="loadContent()" class="blue-grey lighten-5">
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+
+  <script>
+
+    function loadContent() {
+      var site = $(location).attr('hash').substr(1);
+      console.log("trying to load: " + site + ".html");
+
+      $('#content').empty();
+
+      if (!site || 0 === site.length) {
+        console.log("site is empty. Loading start page");
+        $("#content").load("startContent.html");
+      } else {
+        $("#content").load(site + ".html", function (response, status, xhr) {
+          if ( status === "error") {
+            var msg = "Die angeforderte Seite: " + site + " konnte nicht gefunden werden. ";
+            $("#content").html(msg + xhr.status + " " + xhr.statusText);
+          }
+        })
+      }
+    }
+
+    $(document).ready(function () {
+      //$(".button-collapse").sideNav();
+      $('.button-collapse').sideNav({
+            menuWidth: 220, // Default is 240
+            edge: 'left', // Choose the horizontal origin
+            closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
+          }
+      );
+
+      $('.nav-wrapper').on('click', 'li', function() {
+        $('.nav-wrapper li.active').removeClass('active');
+        $(this).addClass('active');
+      });
+
+      $('.brand-logo').on('click', function () {
+        $('.nav-wrapper li.active').removeClass('active');
+      })
+
+      $('.page-footer').on('click', function () {
+        $('.nav-wrapper li.active').removeClass('active');
+      })
+
+      loadContent();
+    });
+
+  </script>
+
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper blue-grey">
+        <a href="#" class="brand-logo"><img src="img/logo_small.jpg"></a>
+        <!-- hamburger menu for mobile screens -->
+        <a href="#" data-activates="side-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+
+        <!-- normal navigation links for desktop -->
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#schaerfdienst">Schleif- & Sch&aumlrfdienst</a></li>
+          <li><a href="#produkte">Produkte</a></li>
+          <li><a href="#aktionen">Aktionen</a></li>
+          <li><a href="#uebermsc">Über msc</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+
+        <!-- view for mobile side-menu -->
+        <ul class="side-nav" id="side-menu">
+          <li><a href="#schaerfdienst">Schleif- & Sch&aumlrfdienst</a></li>
+          <li><a href="#produkte">Produkte</a></li>
+          <li><a href="#aktionen">Aktionen</a></li>
+          <li><a href="#uebermsc">Über msc</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+  <main>
+    <div class="container" id="content">
+    </div>
+  </main>
+
+  <footer class="page-footer blue-grey">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">msc - handel & service</h5>
+          <a href="#contact" class="white-text darken-1">Kontakt</a><br>
+          <a href="#impressum" class="white-text darken-1">Impressum</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright blue-grey darken-1">
+      <div class="container">
+        2016 Copyright msc - handel & service
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
