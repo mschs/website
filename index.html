@@ -25,6 +25,8 @@
 
       $('#content').empty();
 
+      $('#loading').show();
+
       if (!site || 0 === site.length) {
         console.log("site is empty. Loading start page");
         $("#content").load("startContent.html");
@@ -36,6 +38,7 @@
           }
         })
       }
+      $('#loading').hide();
     }
 
     $(document).ready(function () {
@@ -95,6 +98,18 @@
 
   <main>
     <div class="container" id="content">
+    </div>
+
+    <div class="preloader-wrapper big active" id="loading">
+      <div class="spinner-layer spinner-blue-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
     </div>
   </main>
 
