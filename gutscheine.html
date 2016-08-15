@@ -1,0 +1,43 @@
+<h2>Gutscheine</h2>
+
+<p>
+  Gutscheine können pers&oumlnlich, telefonisch oder auch per E-Mail angefragt werden. Die Gutscheine k&oumlnnen
+  f&uumlr alle Produkte und Dienstleistungen, die msc handel& service anbietet, genutzt werden.
+</p>
+<p>
+  Telefonisch k&oumlnnen Sie mich unter der Nummer +49 170 7679653 erreichen.<br>
+  M&oumlchten Sie &uumlber E-Mail anfragen und dann f&uumlllen Sie bitte folgende Daten aus und dr&uumlcken danach auf den Button "Senden".
+</p>
+
+ <form id="kontaktformular gutschein" name="kontaktformular gutschein" action="">
+  <div>
+    <label for="absender">Ihre E-Mail-Adresse:*</label>
+    <input type="text" id="absender" name="absender" required="required" />
+  </div>
+  <label for="gewünschter Gutscheinbetrag">Ihr gewünschter Gutschein-Betrag:*</label>
+  <input type="number" id="gewünschter Gutscheinbetrag" name="gewünschter Gutscheinbetrag" required="required" />
+  <div>
+    <label for="name empfänger">Name der Person, die den Gutschein erhält:</label>
+    <input type="text" id="name empfänger" name="name empfänger" />
+  </div>
+<label for="bezahlart">Ihre gewünschte Bezahlart:*</label><br>
+  <input type="checkbox" id="bezahlart" name="bezahlart" required="required" />
+  <fieldset>
+    <input type="radio" id="bar bei abholung" name="bezahlart" value="Bar bei Abholung">
+    <label for="bar bei abholung"> Bar bei Abholung</label><br>
+    <input type="radio" id="per Banküberweisung" name="bezahlart" value="Per Banküberweisung">
+    <label for="per Banküberweisung"> Per Banküberweisung</label><br>
+  </fieldset>
+  <div>
+    <label for="nachricht">Zusätzliche Vermerke (optional):</label>
+    <textarea id="nachricht" name="nachricht" cols="20" rows="5"></textarea>
+  </div>
+  <FORM METHOD=POST ACTION="mailto:lisa.schierlinger@krones.com" ENCTYPE="text/plain">
+</TEXTAREA>
+      <INPUT NAME="redirect" TYPE="hidden" VALUE="index.html">
+      <INPUT NAME="NEXT_URL" TYPE="hidden" VALUE="index.html">
+      <BR>
+      <INPUT TYPE="submit" VALUE="Send">
+      <INPUT TYPE="reset" VALUE="Clear">
+    </FORM>
+</form>
