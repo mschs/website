@@ -9,10 +9,10 @@
   M&oumlchten Sie &uumlber E-Mail anfragen und dann f&uumlllen Sie bitte folgende Daten aus und dr&uumlcken danach auf den Button "Senden".
 </p>
 
- <form id="kontaktformular gutschein" name="kontaktformular gutschein" action="">
+ <form action="https://formspree.io/lisa.schierlinger@krones.com">
   <div>
     <label for="absender">Ihre E-Mail-Adresse:*</label>
-    <input type="text" id="absender" name="absender" required="required" />
+    <input type="text" id="absender" name="_replyto" required="required" />
   </div>
   <label for="gewünschter Gutscheinbetrag">Ihr gewünschter Gutschein-Betrag:*</label>
   <input type="number" id="gewünschter Gutscheinbetrag" name="gewünschter Gutscheinbetrag" required="required" />
@@ -32,12 +32,4 @@
     <label for="nachricht">Zusätzliche Vermerke (optional):</label>
     <textarea id="nachricht" name="nachricht" cols="20" rows="5"></textarea>
   </div>
-  <FORM METHOD=POST ACTION="http://formspree.io/lisa.schierlinger@krones.com" ENCTYPE="text/plain">
-</TEXTAREA>
-      <INPUT NAME="redirect" TYPE="hidden" VALUE="index.html">
-      <INPUT NAME="NEXT_URL" TYPE="hidden" VALUE="index.html">
-      <BR>
-      <INPUT TYPE="submit" VALUE="Send">
-      <INPUT TYPE="reset" VALUE="Clear">
-    </FORM>
 </form>
