@@ -80,6 +80,24 @@
       loadContent();
     });
 
+    $("#gutschein_form").validate({
+    rules: {
+      email: {
+        required: true,
+        email: true
+      },
+
+      betrag: {
+        required: true,
+        minlenght: 1
+      },
+
+      bezahlmethode: {
+        required: true
+      }
+    }
+  })
+
   </script>
 
   <div class="navbar-fixed">
