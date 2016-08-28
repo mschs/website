@@ -33,6 +33,16 @@
     ga('send', 'pageview');
   </script>
 
+  <!-- Facebook button -->
+  <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v2.7";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+  </script>
+
   <script>
 
     function loadContent() {
@@ -158,6 +168,8 @@
           <a href="#impressum" class="white-text darken-1">Impressum</a><br>
           <a href="#widerrufsbelehrung" class="white-text darken-1">Widerrufsbelehrung</a>
         </div>
+        <div class="col l6 s12">
+        <div class="fb-like" data-href="https://www.facebook.com/schleifdienst" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
       </div>
     </div>
     <div class="footer-copyright blue-grey darken-1">
